@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Oe5dY6j8gjN6/vnnRqcsK9iOJ7R6wfrvFYewuan+5xdXLoXPP71yI7nH6PBY0WThJUewDPWaeqW8oQ32QhMrBQ==",
+  "dgSpecHash": "2sDrrqeMABBJUSR/paHzB6RBT6fvX3kDoytnU6+FwOCMa5p78WNIFKRYUbi9oRRP6qhmNhjqXKqvhpBvc+Xnxw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bengtsson.kevin\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\bengtsson.kevin\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
+    "C:\\Users\\bengtsson.kevin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

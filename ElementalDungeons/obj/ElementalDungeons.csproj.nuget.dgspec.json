@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj": {}
+    "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj": {}
   },
   "projects": {
-    "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj": {
+    "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
+        "projectUniqueName": "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
         "projectName": "ElementalDungeons",
-        "projectPath": "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
+        "projectPath": "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\ElementalDungeons.csproj",
         "packagesPath": "C:\\Users\\bengtsson.kevin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\obj\\",
+        "outputPath": "C:\\Users\\bengtsson.kevin\\Documents\\Gymnasiearbete\\ElementalDungeons\\ElementalDungeons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bengtsson.kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Raylib-cs": {
+              "target": "Package",
+              "version": "[4.0.0.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
