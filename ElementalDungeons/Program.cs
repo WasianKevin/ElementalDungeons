@@ -36,6 +36,7 @@ Rectangle playerRect = new Rectangle(60, 875, playerImage.width, playerImage.hei
 
 List<Fireball> fireballs = new List<Fireball>();
 List<Waterball> waterballs = new List<Waterball>();
+List<SkeleMob> skeletons = new List<SkeleMob>();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -209,9 +210,10 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
         //goblin spawn
-        Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
-        Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
-        Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
+
 
         //Draws the character
         Raylib.DrawTexture(playerImage, (int)playerRect.x, (int)playerRect.y, Color.WHITE);
@@ -300,12 +302,25 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
         //goblin spawn
-        Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
-        Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
-        Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
+        // Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
 
         //Draws the character
         Raylib.DrawTexture(playerImage, (int)playerRect.x, (int)playerRect.y, Color.WHITE);
+
+
+        SkeleMob b3 = new SkeleMob();
+        b3.brect = new Rectangle(980, 875, 80, 100);
+        skeletons.Add(b3);
+
+        for (int i = 0; i < skeletons.Count; i++)
+        {
+            skeletons[i].Update();
+            skeletons[i].Draw();
+        }
+
+
 
         Vector2 movement2 = ReadMovement(speed);
         // Den under uppdaterar för att se om jag har rtört mig
@@ -353,9 +368,9 @@ while (!Raylib.WindowShouldClose())
 
 
 
-//Fix enemies move towards player
-//Fix enemies health
-//
+    //Fix enemies move towards player
+    //Fix enemies health
+    //
 
 
 
