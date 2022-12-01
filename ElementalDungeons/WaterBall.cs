@@ -2,7 +2,7 @@ using System.Numerics;
 using Raylib_cs;
 
 
-public class Fireball
+public class Waterball
 {
 
 
@@ -11,7 +11,7 @@ public class Fireball
     public Rectangle brect;
     public bool isAlive;
 
-    public Texture2D fireball = Raylib.LoadTexture("fireball.png");
+    public Texture2D waterball = Raylib.LoadTexture("Waterball.png");
     public void Update()
     {
         float speed = 15;
@@ -30,7 +30,7 @@ public class Fireball
 
     public void Draw()
     {
-        Raylib.DrawTexture(fireball, (int)brect.x, (int)brect.y, Color.WHITE);
+        Raylib.DrawTexture(waterball, (int)brect.x, (int)brect.y, Color.WHITE);
     }
 
 }
