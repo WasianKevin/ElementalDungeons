@@ -26,3 +26,7 @@ public class SkeleMob
 
 
 }
+
+
+//if ball touch mob, mob go away
+//Mob move x-1 every frame

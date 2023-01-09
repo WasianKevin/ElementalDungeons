@@ -4,14 +4,11 @@ using Raylib_cs;
 
 public class Fireball
 {
-
-
     public Vector2 direction;
-
     public Rectangle brect;
     public bool isAlive;
-
     public Texture2D fireball = Raylib.LoadTexture("fireball.png");
+
     public void Update()
     {
         float speed = 15;

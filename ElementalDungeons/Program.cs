@@ -11,9 +11,11 @@ Raylib.SetTargetFPS(60);
 Vector2 lastPlayerDirection = new Vector2(1, 0);
 
 
+//Texture2D
 Texture2D background = Raylib.LoadTexture("DungeonBackground.png");
 Texture2D MainScreen = Raylib.LoadTexture("DungeonHomeScreen.png");
 Texture2D ElementDecision = Raylib.LoadTexture("DungeonElement.png");
+Texture2D EnemyDecision = Raylib.LoadTexture("ChooseEnemy.png");
 Texture2D playerImage = Raylib.LoadTexture("obama.png");
 Texture2D goblin = Raylib.LoadTexture("goblin.png");
 Texture2D fireball = Raylib.LoadTexture("fireball.png");
@@ -21,19 +23,21 @@ Texture2D waterball = Raylib.LoadTexture("Waterball.png");
 
 
 
-
+//String, Floats, Bools
 string room = "HomeScreen";
 float speed = 5f;
 float velocity = 0;
 float gravity = 2;
 bool isGrounded = false;
-
+string banan = "";
+string apel = "";
 
 
 //Creation of the character and obstacles
 Rectangle playerRect = new Rectangle(60, 875, playerImage.width, playerImage.height);
 
 
+//Listor
 List<Fireball> fireballs = new List<Fireball>();
 List<Waterball> waterballs = new List<Waterball>();
 List<SkeleMob> skeletons = new List<SkeleMob>();
@@ -88,7 +92,6 @@ while (!Raylib.WindowShouldClose())
 
 
 
-
     // X-borders
     if (playerRect.x < 30 || playerRect.x + playerRect.width > Raylib.GetScreenWidth() - 30)
     {
@@ -111,7 +114,7 @@ while (!Raylib.WindowShouldClose())
 
 
 
-
+    //Start Screen
     if (room == "HomeScreen")
     {
         //Allows me to draw a room
@@ -137,7 +140,7 @@ while (!Raylib.WindowShouldClose())
 
 
 
-
+    //Choose your element screen
     if (room == "Element")
     {
         //Allows me to draw a room
@@ -149,14 +152,71 @@ while (!Raylib.WindowShouldClose())
         //If i press 2, i enter the fire domain.
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
         {
-            room = "DungeonFire";
+            room = "Enemy";
+            banan = "Fire";
         }
 
         //If i press 1, i enter the water domain.
         if (Raylib.IsKeyPressed(KeyboardKey.KEY_Q))
         {
-            room = "DungeonWater";
+            room = "Enemy";
+            banan = "Water";
         }
+
+        Raylib.EndDrawing();
+    }
+
+
+    //Choose your Enemy screen
+    if (room == "Enemy")
+    {
+        //Allows me to draw a room
+        Raylib.BeginDrawing();
+
+        //Draws the background
+        Raylib.DrawTexture(EnemyDecision, 0, 0, Color.WHITE);
+
+        if (banan == "Fire")
+        {
+            Raylib.DrawText("Fire", 50, 50, 40, Color.GOLD);
+        }
+
+
+        if (banan == "Water")
+        {
+            Raylib.DrawText("Water", 50, 50, 40, Color.GOLD);
+        }
+
+
+        //If i press 2, i enter the fire domain.
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+        {
+
+            apel = "Skeleton";
+            //room = "DungeonFire";
+        }
+
+        //If i press 1, i enter the water domain.
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_Q))
+        {
+            //room = "DungeonWater";
+            apel = "Goblin";
+
+        }
+
+
+        if (apel == "Skeleton")
+        {
+            Raylib.DrawText("Skeleton", 50, 100, 40, Color.GOLD);
+        }
+
+
+        if (apel == "Goblin")
+        {
+            Raylib.DrawText("Goblin", 50, 100, 40, Color.GOLD);
+        }
+
+
 
         Raylib.EndDrawing();
     }
@@ -199,8 +259,7 @@ while (!Raylib.WindowShouldClose())
 
 
 
-
-
+    //Dungeon fire theme
     if (room == "DungeonFire")
     {
         //Allows me to draw a room
@@ -215,7 +274,7 @@ while (!Raylib.WindowShouldClose())
         // Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
 
 
-        //Draws the character
+        //Draws the character   
         Raylib.DrawTexture(playerImage, (int)playerRect.x, (int)playerRect.y, Color.WHITE);
 
         Vector2 movement2 = ReadMovement(speed);
@@ -292,7 +351,7 @@ while (!Raylib.WindowShouldClose())
 
 
 
-
+    //Dungeon water themed
     if (room == "DungeonWater")
     {
         //Allows me to draw a room
@@ -302,24 +361,12 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
         //goblin spawn
-        // Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
-        // Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
-        // Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
+        Raylib.DrawTexture(goblin, 820, 725, Color.WHITE);
+        Raylib.DrawTexture(goblin, 900, 725, Color.WHITE);
+        Raylib.DrawTexture(goblin, 980, 725, Color.WHITE);
 
         //Draws the character
         Raylib.DrawTexture(playerImage, (int)playerRect.x, (int)playerRect.y, Color.WHITE);
-
-
-        SkeleMob b3 = new SkeleMob();
-        b3.brect = new Rectangle(980, 875, 80, 100);
-        skeletons.Add(b3);
-
-        for (int i = 0; i < skeletons.Count; i++)
-        {
-            skeletons[i].Update();
-            skeletons[i].Draw();
-        }
-
 
 
         Vector2 movement2 = ReadMovement(speed);
